@@ -57,9 +57,7 @@ INNER JOIN Borrowers ON Loans.BorrowerID = Borrowers.BorrowerID;
 -- Get all reserved books:
 SELECT Books.Title, Books.Author, Borrowers.Name, Reservations.DateReserved, Reservations.DateNeeded
 FROM Books
-INNER JOIN Reservations ON Books.BookID = Reservations.BookID
-INNER JOIN Borrowers 
-ON Reservations.BorrowerID = Borrowers.BorrowerID;
+INNER JOIN Reservations ON Books.BookID = Reservations.BookID;
 
 -- Get all books borrowed by a specific borrower:
 SELECT Books.Title, Books.Author, Loans.DateBorrowed, Loans.DueDate, Loans.DateReturned
